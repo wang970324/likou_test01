@@ -1,18 +1,23 @@
 package jihe;
 
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Main1 {
     public static void main(String[] args) {
-        TreeMap<Person, String> pdata = new TreeMap<Person, String>();
-        pdata.put(new Person("张三", 30), "zhangsan");
-        pdata.put(new Person("李四", 20), "lisi");
-        pdata.put(new Person("王五", 10), "wangwu");
-        pdata.put(new Person("小红", 5), "xiaohong");
-        Set<Person> keys=pdata.keySet();
-        for (Person key:keys){
-            System.out.println(key.getAge() + "-" + key.getName());
+        Map<Integer,Integer> map=new HashMap<>();
+        map.put(1,22);
+        map.put(2,33);
+        map.put(3,15);
+        map.put(4,20);
+        map.put(5,14);
+        map.put(6,18);
+
+        List<Integer> list=new ArrayList<>();
+        for (Map.Entry<Integer,Integer> entry:map.entrySet()){
+            if(entry.getValue()>=18){
+                list.add(entry.getKey());
+            }
         }
+        System.out.println(list);
     }
 }
